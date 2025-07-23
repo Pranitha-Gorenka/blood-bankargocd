@@ -15,21 +15,6 @@ spec:
     spec:
       containers:
       - name: bloodbank
-        image: manne335/bloodbank-php:v1      # Your Docker image name & tag from pipeline
+        image: manne335/bloodbank-php:v1
         ports:
-        - containerPort: 80                 # Assuming your app runs on port 80
-        # If you need env variables or volume mounts, add here
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: bloodbank-service
-spec:
-  selector:
-    app: bloodbank
-  ports:
-  - protocol: TCP
-    port: 80                            # Expose on port 80 externally
-    targetPort: 80                     # Target port inside the container
-  type: LoadBalancer
+        - containerPort: 3000   # Use port 3000
